@@ -26,7 +26,7 @@ def paint(models, cashflows):
     plt.ylabel('Monthly CashFlow')
     for model, cf in zip(models, cashflows):
         print model
-        model_str = "%3.3fm, %3.3fCAC Ratio, %1.2fCCR" % (model['cac'], model['ratio'], model['mccr'])
+        model_str = "%3.3fm, Ratio:%3.3f, CCR:%1.2f\%%" % (model['cac'], model['ratio'], model['mccr']*100.0)
         plt.plot(0, 0, colors[color_index], label = '$%s$' % model_str)
         for month, cash in enumerate(cf):
             plt.plot(month+1, cash, colors[color_index])
