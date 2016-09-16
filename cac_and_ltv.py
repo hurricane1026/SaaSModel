@@ -44,7 +44,6 @@ def calc_model(model):
     # calc all model's detail
     if model_detail == 3:
         model["ratio"] = 1.0 / model["mccr"] / model["cac"]
-        pass
     elif model_detail == 5:
         model["mccr"] = 1.0 / (model["ratio"] * model["cac"])
     elif model_detail == 6:
