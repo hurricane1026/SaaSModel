@@ -14,7 +14,7 @@ def cashflow(investment = 1, mccr = 0.0, cac = 1.0, months = 120):
         new_customers = current_customers * 1.0 / cac
         loss_customers = current_customers * 1.0 * mccr
         current_customers = current_customers + new_customers - loss_customers
-    return [int(n) for n in cashflows]
+    return cashflows
 
 def paint(models, cashflows):
     import matplotlib.pyplot as plt
@@ -80,6 +80,7 @@ if __name__ == "__main__":
     models = [calc_model(m) for m in origin_models]
     cashflows = [cashflow(mccr = m["mccr"], cac = m["cac"], months = args.month) for m in models]
 
+    #print cashflows
     paint(models, cashflows)
     print "enjoy"
 
